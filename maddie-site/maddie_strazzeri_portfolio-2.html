@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Maddie Strazzeri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sand:    #F5EFE6;
+    --cream:   #FAF7F2;
+    --warm:    #EDE4D8;
+    --gold:    #C8963E;
+    --goldi:   #E8B560;
+    --dark:    #1C1A17;
+    --mid:     #4A4540;
+    --soft:    #8C857C;
+    --white:   #FEFCF9;
+    --accent:  #2B4A3F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 3.5rem;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200, 150, 62, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.12em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 6rem 3.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+    font-weight: 400;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    font-weight: 300;
+    color: var(--soft);
+    letter-spacing: 0.06em;
+    margin-bottom: 2.4rem;
+    font-style: italic;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--mid);
+    max-width: 420px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--dark);
+    color: var(--cream);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.25s;
+    border: 1px solid var(--dark);
+  }
+
+  .btn-primary:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+  }
+
+  .btn-outline {
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--dark);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    border: 1px solid rgba(28,26,23,0.3);
+    transition: all 0.25s;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .hero-right {
+    position: relative;
+    background: var(--warm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  .hero-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+
+  .hero-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(28,26,23,0.55) 100%
+    );
+  }
+
+  .hero-texture {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(200,150,62,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(43,74,63,0.12) 0%, transparent 50%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    background-image:
+      repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+    background-size: 28px 28px;
+  }
+
+  .hero-quote-block {
+    padding: 1.8rem 2.2rem;
+    background: var(--warm);
+    border-top: 2px solid var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--dark);
+    line-height: 1.45;
+    margin-bottom: 1rem;
+  }
+
+  .hero-quote-attr {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .hero-tag-cloud {
+    position: absolute;
+    top: 1.8rem;
+    right: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: rgba(28,26,23,0.55);
+    backdrop-filter: blur(6px);
+    padding: 0.35rem 0.8rem;
+    border-left: 2px solid var(--goldi);
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 7rem 3.5rem; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-heading em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .section-intro {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--mid);
+    max-width: 620px;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+
+  .about-copy p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--mid);
+    margin-bottom: 1.4rem;
+  }
+
+  .about-copy p:last-child { margin-bottom: 0; }
+
+  .about-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-stat {
+    border-left: 2px solid var(--gold);
+    padding-left: 1.4rem;
+  }
+
+  .about-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .about-stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--soft);
+  }
+
+  .about-values {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .value-pill {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    border: 1px solid rgba(200,150,62,0.35);
+    padding: 0.45rem 1rem;
+    background: var(--cream);
+  }
+
+  /* ── PROJECTS ── */
+  #projects {
+    background: var(--cream);
+  }
+
+  .projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .project-card {
+    background: var(--white);
+    border: 1px solid rgba(200,150,62,0.12);
+    overflow: hidden;
+  }
+
+  .project-card:hover {
+    box-shadow: 0 16px 40px rgba(28,26,23,0.08);
+  }
+
+  .project-card.featured {
+    grid-column: unset;
+  }
+
+  .project-visual {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+  }
+
+  .pv-carshow {
+    background: linear-gradient(135deg, #2B4A3F 0%, #1C3530 40%, #C8963E 100%);
+  }
+
+  /* ── PHOTO PROJECT LAYOUT ── */
+  .project-photo-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: unset;
+  }
+
+  .project-photo-left {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-photo-left img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .project-card:hover .project-photo-left img {
+    transform: scale(1.03);
+  }
+
+  .project-photo-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    height: 110px;
+    margin-top: 3px;
+  }
+
+  .project-photo-strip-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    height: 110px;
+    margin-top: 3px;
+  }
+
+  .photo-strip-item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+    filter: brightness(0.88);
+  }
+
+  .photo-strip-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(1);
+  }
+
+  .project-photo-right {
+    padding: 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--white);
+  }
+
+  .carshow-gallery { display: none; }
+  .market-gallery { display: none; }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 1.4rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200,150,62,0.3);
+    padding-bottom: 0.15rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .project-link:hover {
+    color: var(--dark);
+    border-color: var(--dark);
+  }
+
+  .project-card:hover .market-main img {
+    transform: scale(1.03);
+  }
+
+  .market-side {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: var(--dark);
+  }
+
+  .market-thumb {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .market-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+    filter: brightness(0.9);
+  }
+
+  .market-thumb:hover img {
+    transform: scale(1.06);
+    filter: brightness(1);
+  }
+
+  .pv-market {
+    background: linear-gradient(135deg, #4A3828 0%, #8C6040 50%, #E8B560 100%);
+  }
+
+  .pv-mentor {
+    background: linear-gradient(135deg, #1C2840 0%, #2B3F5C 50%, #5A7FA0 100%);
+  }
+
+  .pv-ai {
+    background: linear-gradient(135deg, #2C2C2C 0%, #4A4A4A 50%, #C8963E 100%);
+  }
+
+  .pv-preview {
+    background: linear-gradient(135deg, #3A2B4A 0%, #5C4070 50%, #9B7EC8 100%);
+  }
+
+  .project-visual-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.2;
+    position: relative;
+    z-index: 2;
+  }
+
+  .project-visual-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      white 0, white 1px,
+      transparent 0, transparent 50%
+    );
+    background-size: 20px 20px;
+  }
+
+  .project-body {
+    padding: 1.6rem 1.8rem 2rem;
+  }
+
+  .project-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 0.7rem;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: var(--soft);
+    margin-bottom: 1.2rem;
+  }
+
+  .project-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-dot {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    background: var(--warm);
+    padding: 0.3rem 0.7rem;
+  }
+
+  /* ── EXPERIENCE ── */
+  #resume {
+    background: var(--dark);
+    color: var(--cream);
+  }
+
+  #resume .section-label { color: var(--goldi); }
+
+  #resume .section-heading {
+    color: var(--cream);
+  }
+
+  #resume .section-intro { color: rgba(245,239,230,0.6); }
+
+  .resume-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+    margin-top: 3.5rem;
+  }
+
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+
+  .exp-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(245,239,230,0.08);
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 2rem;
+  }
+
+  .exp-item:first-child { padding-top: 0; }
+
+  .exp-date {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--goldi);
+    padding-top: 0.2rem;
+    line-height: 1.6;
+  }
+
+  .exp-content {}
+
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.2rem;
+  }
+
+  .exp-org {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--goldi);
+    margin-bottom: 0.8rem;
+  }
+
+  .exp-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .exp-bullets li {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(245,239,230,0.65);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 4px;
+    height: 4px;
+    background: var(--goldi);
+    border-radius: 50%;
+  }
+
+  .resume-sidebar { display: flex; flex-direction: column; gap: 3rem; }
+
+  .sidebar-block {}
+
+  .sidebar-heading {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--goldi);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(232,181,96,0.2);
+  }
+
+  .edu-school {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-degree {
+    font-size: 0.82rem;
+    color: rgba(245,239,230,0.6);
+    line-height: 1.6;
+    margin-bottom: 0.2rem;
+  }
+
+  .edu-year {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--goldi);
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(245,239,230,0.7);
+    border: 1px solid rgba(232,181,96,0.25);
+    padding: 0.4rem 0.8rem;
+  }
+
+  .achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .achievement-item {
+    font-size: 0.82rem;
+    color: rgba(245,239,230,0.65);
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .achievement-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 4px;
+    height: 4px;
+    background: var(--goldi);
+    border-radius: 50%;
+  }
+
+  /* ── PHILOSOPHY ── */
+  #philosophy {
+    background: var(--warm);
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+
+  .phil-card {
+    padding: 2.2rem;
+    background: var(--white);
+    border-top: 2px solid var(--gold);
+  }
+
+  .phil-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: rgba(200,150,62,0.2);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+
+  .phil-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 0.8rem;
+  }
+
+  .phil-text {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--soft);
+  }
+
+  /* ── CONNECT ── */
+  #connect {
+    background: var(--accent);
+    text-align: center;
+    padding: 6rem 3.5rem;
+  }
+
+  #connect .section-label { color: var(--goldi); }
+
+  #connect .section-heading {
+    color: var(--cream);
+    margin: 0 auto 1.2rem;
+    max-width: 600px;
+  }
+
+  #connect .section-intro {
+    color: rgba(245,239,230,0.65);
+    margin: 0 auto 2.5rem;
+    text-align: center;
+  }
+
+  .connect-ctas {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-light {
+    padding: 0.9rem 2.2rem;
+    background: var(--cream);
+    color: var(--dark);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    border: 1px solid var(--cream);
+    transition: all 0.25s;
+  }
+
+  .btn-light:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--white);
+  }
+
+  .btn-ghost-light {
+    padding: 0.9rem 2.2rem;
+    background: transparent;
+    color: var(--cream);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    border: 1px solid rgba(245,239,230,0.4);
+    transition: all 0.25s;
+  }
+
+  .btn-ghost-light:hover {
+    border-color: var(--cream);
+    background: rgba(245,239,230,0.08);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 2rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(200,150,62,0.1);
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: rgba(245,239,230,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-contact {
+    font-size: 0.75rem;
+    color: rgba(245,239,230,0.35);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow  { animation: fadeUp 0.7s ease 0.1s both; }
+  .hero-name     { animation: fadeUp 0.7s ease 0.25s both; }
+  .hero-title    { animation: fadeUp 0.7s ease 0.38s both; }
+  .hero-desc     { animation: fadeUp 0.7s ease 0.5s both; }
+  .hero-ctas     { animation: fadeUp 0.7s ease 0.62s both; }
+  .hero-right    { animation: fadeUp 0.9s ease 0.2s both; }
+
+  /* ── DIVIDER ── */
+  .gold-rule {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.5rem 0 2.2rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-name">Maddie Strazzeri</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Experience</a></li>
+    <li><a href="#philosophy">Approach</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Marketing &amp; Management · Saint Mary's College of California</span>
+    <h1 class="hero-name">Maddie<br><em>Strazzeri</em></h1>
+    <p class="hero-title">People-first marketer. Community builder. Brand believer.</p>
+    <p class="hero-desc">I study how brands earn the trust of the people they serve — and I put that belief into practice every time I plan an event, mentor a student, or build a campaign. For me, the customer has always been at the center of everything.</p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-primary">See My Work</a>
+      <a href="#connect" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img src="IMG_3850.jpeg" alt="Maddie Strazzeri in Florence, Italy"/>
+      <div class="hero-photo-overlay"></div>
+      <div class="hero-tag-cloud">
+        <span class="hero-tag">Business Marketing</span>
+        <span class="hero-tag">Management &amp; Leadership</span>
+        <span class="hero-tag">Italian Studies Minor</span>
+        <span class="hero-tag">Event Strategy</span>
+        <span class="hero-tag">Customer Development</span>
+      </div>
+    </div>
+    <div class="hero-quote-block">
+      <p class="hero-quote">"More than just a pop-up shop — a celebration of entrepreneurship, where local and student-owned small businesses come together to share their passions with the community."</p>
+      <span class="hero-quote-attr">Maddie on the Gideon Market, 2025 · Photo: Florence, Italy on Study Abroad</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <span class="section-label">Who I Am</span>
+  <h2 class="section-heading">Collaborative by nature.<br><em>Purposeful</em> by practice.</h2>
+  <div class="gold-rule"></div>
+
+  <div class="about-grid">
+    <div class="about-copy">
+      <p>I am a double-major in Business Marketing and Business Management and Leadership at Saint Mary's College of California, and I have spent my time here doing exactly what those two disciplines ask of you — learning how to reach people, and learning how to lead them somewhere worth going.</p>
+      <p>My Marketing major has sharpened the way I read an audience, build a message, and stay consistent across every touchpoint. My Management and Leadership major has shaped how I rally a team, navigate complexity, and follow a vision all the way through to completion. Together, they are the foundation for a career rooted in one belief: that understanding the person in front of you is the most important thing you can do in business.</p>
+      <p>That belief did not come from a textbook. It came from years of watching brands, organizations, and communities show up for the people they serve — and from building my own experiences around that same standard. Every event I have planned, every student I have mentored, and every campaign I have run has been shaped by the question: what does this person actually need, and how do we meet them there?</p>
+      <div class="about-values">
+        <span class="value-pill">People-First</span>
+        <span class="value-pill">Community-Driven</span>
+        <span class="value-pill">Brand Storytelling</span>
+        <span class="value-pill">Cross-org Collaboration</span>
+        <span class="value-pill">Adaptive Thinking</span>
+        <span class="value-pill">Customer Development</span>
+      </div>
+    </div>
+
+    <div class="about-sidebar">
+      <div class="about-stat">
+        <div class="about-stat-num">2+</div>
+        <div class="about-stat-label">Years leading major campus events</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">40+</div>
+        <div class="about-stat-label">Vehicles at the revived Speed &amp; Style Car Show</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">10+</div>
+        <div class="about-stat-label">Vendors at the Gideon Small Business Market</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">3</div>
+        <div class="about-stat-label">Simultaneous leadership roles at SMC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="testimonial" style="background:var(--dark);padding:5rem 3.5rem;">
+  <div style="max-width:860px;margin:0 auto;text-align:center;">
+    <span class="section-label" style="color:var(--goldi);">In Their Words</span>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.2vw,1.9rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.6;margin:1.2rem 0 2rem;">"Maddie is a natural leader who brings a great deal of enthusiasm, passion, and professionalism to any team environment. The minute I met Maddie, I knew she was going to be a successful business leader who is eager to make a true positive impact on those around her. Maddie is a terrific peer coach, club leader, and a stellar business student which has given her recognition as a Dean's Advisory Member and honors student. She is a fantastic public speaker, very creative, highly driven, and excels at building relationships."</p>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+      <span style="font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--goldi);">Mariella Crudele</span>
+      <span style="font-size:0.78rem;color:rgba(245,239,230,0.45);letter-spacing:0.06em;">Undergraduate Academic Services Coordinator · Saint Mary's College of California</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="projects-header">
+    <div>
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-heading">Projects that put<br><em>people first.</em></h2>
+    </div>
+    <p style="font-size:0.85rem;color:var(--soft);max-width:280px;line-height:1.7;text-align:right;">Every project here started with a community and was built around the experience of the people inside it.</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- FEATURED: Car Show -->
+    <div class="project-card">
+      <div class="project-photo-layout">
+        <div class="project-photo-left">
+          <div style="height:calc(100% - 113px); min-height:0; position:relative; overflow:hidden;">
+            <img src="carshow-wide.jpeg" alt="Speed and Style Car Show" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;"/>
+          </div>
+          <div class="project-photo-strip">
+            <div class="photo-strip-item"><img src="carshow-corvette.jpg" alt="Classic Corvette interior"/></div>
+            <div class="photo-strip-item"><img src="carshow-conversation1.jpg" alt="Attendees at the car show"/></div>
+            <div class="photo-strip-item"><img src="carshow-conversation2.jpg" alt="Ferrari owner at the car show"/></div>
+          </div>
+        </div>
+        <div class="project-photo-right">
+          <span class="project-tag">Event Strategy · Community Outreach · May 2025</span>
+          <h3 class="project-title">Reviving a Tradition: The Speed &amp; Style Car Show</h3>
+          <p class="project-desc">As President of the Dante Club at Saint Mary's College of California, I led the full revival of the Speed and Style Car Show — bringing it back for the first time since 2019. From concept to completion, I designed the event's structure, managed logistics across Campus Safety, Dining, and Recreation, conducted targeted outreach to Bay Area car clubs and community members, and executed a comprehensive marketing strategy that drove attendance from across the region. The result was 40+ vehicles, food vendors, live music, lawn games, a wine garden, and a turnout that validated the car show as a lasting annual tradition. Admission and car entry were completely free — because the best events are the ones that belong to everyone.</p>
+          <div class="project-skills">
+            <span class="skill-dot">Cross-dept Coordination</span>
+            <span class="skill-dot">Event Marketing</span>
+            <span class="skill-dot">Community Outreach</span>
+            <span class="skill-dot">Logistics Management</span>
+            <span class="skill-dot">Partnership Building</span>
+          </div>
+          <a href="https://sites.google.com/stmarys-ca.edu/speed-and-style/home" target="_blank" class="project-link">Visit the event website →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gideon Market -->
+    <div class="project-card">
+      <div class="project-photo-layout" style="direction:rtl;">
+        <div class="project-photo-left" style="direction:ltr;">
+          <div style="height:calc(100% - 113px); min-height:0; position:relative; overflow:hidden;">
+            <img src="market-vendor1.jpeg" alt="Vendor browsing at the Gideon Market" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"/>
+          </div>
+          <div class="project-photo-strip-2" style="height:110px;">
+            <div class="photo-strip-item"><img src="market-charms.jpeg" alt="Charm bar at the Gideon Market"/></div>
+            <div class="photo-strip-item"><img src="market-honey.jpeg" alt="Honey vendor at the market"/></div>
+          </div>
+        </div>
+        <div class="project-photo-right" style="direction:ltr;">
+          <span class="project-tag">Marketing · Entrepreneurship · 2025</span>
+          <h3 class="project-title">Gideon Small Business Market</h3>
+          <p class="project-desc">As Marketing &amp; Events Coordinator for the SMC Entrepreneurship Club, I planned and promoted the second annual Gideon Market — a campus-wide small business fair featuring 20 local and Gael-owned vendors. More than a pop-up shop, this event was a celebration of entrepreneurship built around the stories of the people behind each business. Every decision, from the messaging to the layout to the outreach, centered the vendor and attendee experience first.</p>
+          <div class="project-skills">
+            <span class="skill-dot">Event Marketing</span>
+            <span class="skill-dot">Strategic Communications</span>
+            <span class="skill-dot">Community Engagement</span>
+            <span class="skill-dot">Vendor Relations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Marketing -->
+    <div class="project-card">
+      <div class="project-photo-layout">
+        <div class="project-photo-left">
+          <div style="height:100%; min-height:0; position:relative; overflow:hidden; background:linear-gradient(135deg,#2C2C2C 0%,#4A4A4A 50%,#C8963E 100%); display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-style:italic;color:rgba(255,255,255,0.15);text-align:center;padding:2rem;line-height:1.3;">AI-Powered<br>Marketing</span>
+          </div>
+        </div>
+        <div class="project-photo-right">
+          <span class="project-tag">Marketing · AI Tools · Summer 2025</span>
+          <h3 class="project-title">AI-Powered Marketing, Southern California Institute</h3>
+          <p class="project-desc">As a Marketing Intern, I developed AI-powered marketing solutions including custom chatbots with voice and tone analysis integration, automation workflows, and logic trees that optimized marketing processes. The challenge was not just the technology — it was making sure every tool still felt human on the other end. That is the part I cared about most.</p>
+          <div class="project-skills">
+            <span class="skill-dot">AI Tools</span>
+            <span class="skill-dot">Workflow Automation</span>
+            <span class="skill-dot">Voice &amp; Tone Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Peer Mentorship -->
+    <div class="project-card">
+      <div class="project-photo-layout" style="direction:rtl;">
+        <div class="project-photo-left" style="direction:ltr;">
+          <div style="height:100%; min-height:0; position:relative; overflow:hidden; background:linear-gradient(135deg,#1C2840 0%,#2B3F5C 50%,#5A7FA0 100%); display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:3rem;font-style:italic;color:rgba(255,255,255,0.15);text-align:center;padding:2rem;line-height:1.3;">Peer<br>Mentorship</span>
+          </div>
+        </div>
+        <div class="project-photo-right" style="direction:ltr;">
+          <span class="project-tag">Student Development · Ongoing</span>
+          <h3 class="project-title">SEBA Peer Mentor &amp; First Year Peer Coach</h3>
+          <p class="project-desc">Across two mentorship roles — as a School of Economics and Business Administration Peer Mentor and a First Year Advising Cohort Peer Coach — I have worked one-on-one with students navigating course selection, major decisions, and their first steps in a professional direction. The student is the customer here. Listening carefully enough to understand what they actually need, and then showing up for them in exactly that way, is the work.</p>
+          <div class="project-skills">
+            <span class="skill-dot">High-Stakes Communication</span>
+            <span class="skill-dot">Student Advising</span>
+            <span class="skill-dot">Relationship Building</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESUME / EXPERIENCE -->
+<section id="resume">
+  <span class="section-label">Experience &amp; Education</span>
+  <h2 class="section-heading">Where it all<br><em>comes from.</em></h2>
+  <div class="gold-rule" style="background:var(--goldi);"></div>
+  <p class="section-intro">Every role I have taken on has had one thing in common: the person on the other side matters more than the process around them.</p>
+
+  <div class="resume-layout">
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-date">June – July 2025<br>San Diego, CA</div>
+        <div class="exp-content">
+          <div class="exp-role">Marketing Intern</div>
+          <div class="exp-org">Southern California Institute</div>
+          <ul class="exp-bullets">
+            <li>Developed AI-powered marketing solutions and automation workflows that required analytical thinking and complex problem-solving — designing logic trees and voice and tone analysis tools that improved customer engagement and brand consistency across platforms.</li>
+            <li>Coordinated event logistics and managed client relationships through networking excursions, building people-to-people connections that directly translated prospect relationships into expanded business opportunities.</li>
+            <li>Demonstrated resilience and adaptive learning by rapidly mastering emerging workplace technologies, implementing comprehensive digital marketing projects under tight timelines with measurable results.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2024 – 2025<br>Moraga, CA</div>
+        <div class="exp-content">
+          <div class="exp-role">Marketing &amp; Events Coordinator</div>
+          <div class="exp-org">Entrepreneurship Club, SMC</div>
+          <ul class="exp-bullets">
+            <li>Planned and promoted the second annual Small Business Market, a campus-wide fair featuring 20 local and student-owned vendors — building every aspect of the event's marketing strategy around the vendors' stories and the attendees' experience.</li>
+            <li>Developed promotional content across social media and print channels, growing awareness of the event across campus and the surrounding Moraga community through targeted outreach and strategic communications.</li>
+            <li>Partnered with vendors, club executives, and campus organizations to create a vibrant, community-centered experience, demonstrating resilience and adaptive learning as strategies evolved in real time leading up to event day.</li>
+            <li>Worked closely with the executive team on all logistics, from vendor coordination and space planning to day-of execution, ensuring a seamless experience for every person who walked through the door.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2023 – 2025<br>Moraga, CA</div>
+        <div class="exp-content">
+          <div class="exp-role">School of Economics &amp; Business Administration Peer Mentor</div>
+          <div class="exp-org">Saint Mary's College of California</div>
+          <ul class="exp-bullets">
+            <li>Advised and mentored business students through weekly one-on-one office hours, practicing the high-stakes communication and collaboration essential to building trust with the people you serve.</li>
+            <li>Organized and promoted major campus initiatives including Fall Preview Days, Business Student for a Day, and Professional Email Workshops — coordinating cross-functionally with the Dean, faculty, and external alumni.</li>
+            <li>Designed marketing content across social media and print, developing a consistent audience-first voice that connected community to cause and brought the SMC brand to life for prospective students and families.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2023 – Present<br>Moraga, CA</div>
+        <div class="exp-content">
+          <div class="exp-role">President</div>
+          <div class="exp-org">Italian Heritage (Dante) Club, SMC</div>
+          <ul class="exp-bullets">
+            <li>Revived and orchestrated the annual Speed &amp; Style Car Show from the ground up — managing outreach to 40+ vehicles, local businesses, Bay Area community members, and campus departments including Campus Safety, Dining, and Recreation; a full-scale partnership, sales, and logistics effort.</li>
+            <li>Applied analytical thinking and complex problem-solving to event design, building a scalable operational framework that established the car show as a recurring campus tradition with hundreds of attendees.</li>
+            <li>Led cross-functional teams through every phase of event planning, practicing the high-stakes communication and collaboration it takes to align stakeholders from concept to completion.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="resume-sidebar">
+      <div class="sidebar-block">
+        <div class="sidebar-heading">Education</div>
+        <div class="edu-school">Saint Mary's College of California</div>
+        <div class="edu-degree">B.S. Business Marketing<br>B.S. Business Management &amp; Leadership<br>Minor in Italian Studies</div>
+        <div class="edu-year">Expected May 2027 · Moraga, CA</div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-heading">Skills</div>
+        <div class="skills-grid">
+          <span class="skill-tag">Excel</span>
+          <span class="skill-tag">Canva</span>
+          <span class="skill-tag">AI Tools</span>
+          <span class="skill-tag">Workflow Automation</span>
+          <span class="skill-tag">Voice &amp; Tone Analysis</span>
+          <span class="skill-tag">Logic Tree Design</span>
+          <span class="skill-tag">Event Strategy</span>
+          <span class="skill-tag">Brand Storytelling</span>
+          <span class="skill-tag">Community Outreach</span>
+          <span class="skill-tag">Cross-dept Communication</span>
+          <span class="skill-tag">Logistics Management</span>
+          <span class="skill-tag">Social Media Content</span>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <div class="sidebar-heading">Recognition</div>
+        <div class="achievements-list">
+          <div class="achievement-item">Dean's Student Advisory Council Member, 2023–2024</div>
+          <div class="achievement-item">Promoted from Marketing Director to President, Italian Heritage Club</div>
+          <div class="achievement-item">Double-major with Minor — three programs simultaneously</div>
+          <div class="achievement-item">Summer Availability: May 25 – August 7, 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY / APPROACH -->
+<section id="philosophy">
+  <span class="section-label">How I Work</span>
+  <h2 class="section-heading">The beliefs behind<br><em>everything I do.</em></h2>
+  <div class="gold-rule"></div>
+  <p class="section-intro">These are not talking points. They are the things I have learned by doing the work — on campus, in the community, and in every room where someone trusted me to show up.</p>
+
+  <div class="philosophy-grid">
+    <div class="phil-card">
+      <div class="phil-number">01</div>
+      <h3 class="phil-title">The customer is always a person first.</h3>
+      <p class="phil-text">Whether the customer is a student choosing a major, a vendor trusting you with their business's debut, or a car enthusiast driving three hours to an event you planned — they are not a demographic. They are a person. Every decision I make in marketing, in event planning, and in mentorship starts there.</p>
+    </div>
+    <div class="phil-card">
+      <div class="phil-number">02</div>
+      <h3 class="phil-title">Real connection requires real presence.</h3>
+      <p class="phil-text">The best outreach I have ever done did not happen through a caption or a flyer. It happened in a conversation — with a campus department head, a local business owner, a Bay Area car club, a first-year student who did not know where to start. Showing up in person, with intention, is still the most powerful marketing tool there is.</p>
+    </div>
+    <div class="phil-card">
+      <div class="phil-number">03</div>
+      <h3 class="phil-title">Excitement for the product is non-negotiable.</h3>
+      <p class="phil-text">I have never been able to promote something I did not believe in, and I have never had to. The events I plan, the brands I admire, and the organizations I represent are ones I would champion whether or not it was my job. That genuine care comes through in every email, every post, and every conversation — and it is the difference between messaging that lands and messaging that gets scrolled past.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect">
+  <span class="section-label">Get in Touch</span>
+  <h2 class="section-heading">Let's build something<br><em>worth believing in.</em></h2>
+  <div class="gold-rule" style="background:var(--goldi);margin:1.5rem auto 2rem;"></div>
+  <p class="section-intro">I am always open to conversations about internships, collaborations, and opportunities to work with brands and organizations that put the people they serve at the center of everything they do.</p>
+  <div class="connect-ctas">
+    <a href="/cdn-cgi/l/email-protection#fc919d989895998f888e9d8686998e95ccc9bc9b919d9590d29f9391" class="btn-light"><span class="__cf_email__" data-cfemail="b8d5d9dcdcd1ddcbcccad9c2c2ddcad1888df8dfd5d9d1d496dbd7d5">[email&#160;protected]</span></a>
+    <a href="https://www.linkedin.com/in/maddie-strazzeri" class="btn-ghost-light" target="_blank">LinkedIn</a>
+    <a href="tel:8587351926" class="btn-ghost-light">(858) 735-1926</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Maddie Strazzeri &middot; Saint Mary's College of California</span>
+  <span class="footer-contact"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a676b6e6e636f797e786b70706f78633a3f4
